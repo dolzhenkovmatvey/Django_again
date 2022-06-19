@@ -1,0 +1,9 @@
+asgiref
+backports.zoneinfo
+dj-database-url
+django
+gunicorn
+django-heroku
+sqlparse
+whitenoise
+psycopg2

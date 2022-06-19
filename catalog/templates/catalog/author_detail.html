@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ author.first_name }} {{ author.last_name }}</h1>
+
+  <p>({{ author.date_of_birth }} - {{ author.date_of_death }})</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    {% if author.book_set.all %}
+    <h4>Books:</h4>
+
+    {% for copy in author.book_set.all %}
+    <hr>
+    <a href="{% url 'book-detail' copy.id %}"><strong>{{ copy.title }}</strong></a>
+    <p>{{ copy.summary }}</p>
+    {% endfor %}
+    {% endif %}
+  </div>
+{% endblock %}
